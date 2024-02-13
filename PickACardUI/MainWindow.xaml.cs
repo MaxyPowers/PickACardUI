@@ -27,8 +27,12 @@ namespace PickACardUI
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            //Объявить и инициализировать массив случайных карт,
+            //количество случайных карт устанавливается значением Value слайдера numberOfCards
             string[] pickedCards = CardPicker.PickSomeCards((int)numberOfCards.Value);
+            //Очистить список карт
             listOfCards.Items.Clear();
+            //Добавить карты в список из массива
             foreach (var card in pickedCards)
             {
                 listOfCards.Items.Add(card);

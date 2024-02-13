@@ -9,18 +9,27 @@ namespace PickACardUI
     class CardPicker
     {
         static Random random = new Random();
-
+        /// <summary>
+        /// Выбирает заданное количество случайных карт
+        /// </summary>
+        /// <param name="numberOfCards">Количество карт</param>
+        /// <returns></returns>
         public static string[] PickSomeCards(int numberOfCards)
         {
-            string[] pickedCards = new string[numberOfCards];
+            string[] pickedCards = new string[numberOfCards]; //Размер массива указывается при вызове метода
 
+            //Цикл для инициализации значений массива случайными картамми
             for (int i = 0; i < numberOfCards; i++)
             {
                 pickedCards[i] = RandomValue() + " of " + RandomSuit();
             }
-            return pickedCards;
+            return pickedCards; //Вереть массив случайных карт
         }
 
+        /// <summary>
+        /// Случайным образом выбирает номинал карты
+        /// </summary>
+        /// <returns></returns>
         private static string RandomValue()
         {
             int value = random.Next(1, 14);
@@ -36,6 +45,10 @@ namespace PickACardUI
             //Вернуть значение переменной в строковом представлении.
         }
 
+        /// <summary>
+        /// Случайным образом выбирает масть карты
+        /// </summary>
+        /// <returns></returns>
         private static string RandomSuit()
         {
             int value = random.Next(1, 5);
